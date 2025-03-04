@@ -1,0 +1,11 @@
+Flask
+Flask-cors
+Flask-session
+python-dotenv
+langchain
+langchain-core
+langchain-ollama
+langchain-community
+psycopg2-binary
+pyngrok
+langchain-google-genai 

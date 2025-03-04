@@ -1,0 +1,40 @@
+[
+  {
+    "developer_id": 1,
+    "assigned_tasks": [
+      "Build ReactJS frontend - Task List component",
+      "Implement filtering and sorting"
+    ],
+    "preferred_tech_stack": "React, Axios",
+    "deadlines": {
+      "Build ReactJS frontend - Task List component": "2024-03-15",
+      "Implement filtering and sorting": "2024-03-22"
+    }
+  },
+  {
+    "developer_id": 2,
+    "assigned_tasks": [
+      "Build ReactJS frontend - Add Task component",
+      "Build ReactJS frontend - Edit & Delete Task functionality"
+    ],
+    "preferred_tech_stack": "React, Axios",
+    "deadlines": {
+      "Build ReactJS frontend - Add Task component": "2024-03-18",
+      "Build ReactJS frontend - Edit & Delete Task functionality": "2024-03-25"
+    }
+  },
+  {
+    "developer_id": 3,
+    "assigned_tasks": [
+      "Implement backend API (NodeJS) - Update Task endpoint",
+      "Implement backend API (NodeJS) - Delete Task endpoint",
+      "Testing and Debugging"
+    ],
+    "preferred_tech_stack": "Node.js, Express, SQLite3, Jest",
+    "deadlines": {
+      "Implement backend API (NodeJS) - Update Task endpoint": "2024-03-15",
+      "Implement backend API (NodeJS) - Delete Task endpoint": "2024-03-18",
+      "Testing and Debugging": "2024-03-29"
+    }
+  }
+]

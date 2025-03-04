@@ -1,0 +1,40 @@
+```json
+{
+  "task_id": 1,
+  "task_description": "Build a ReactJS frontend Task List component with filtering and sorting capabilities.",
+  "implementation_steps": [
+    "1. **Set up the project:** Create a new React project using Create React App.",
+    "2. **Design the component structure:**  Plan the UI components (input for filtering, dropdown for sorting, task list display).",
+    "3. **Fetch task data:** Use Axios to fetch task data from a backend API (placeholder data can be used initially).",
+    "4. **Implement task display:** Render the fetched tasks in a list format.",
+    "5. **Implement filtering:** Add an input field to allow users to filter tasks based on keywords in the task description.",
+    "6. **Implement sorting:** Add a dropdown to allow users to sort tasks by different criteria (e.g., due date, priority, creation date).",
+    "7. **Handle state management:** Use React's useState hook to manage the task list, filter text, and sorting criteria.",
+    "8. **Write unit tests:** Create unit tests to ensure the component's functionality.",
+    "9. **Optimize performance:** Implement techniques to improve performance, especially for large task lists (e.g., pagination, virtualization)."
+  ],
+  "code_snippet": "```javascript\nimport React, { useState, useEffect } from 'react';\nimport axios from 'axios';\n\nconst TaskList = () => {\n  const [tasks, setTasks] = useState([]);\n  const [filterText, setFilterText] = useState('');\n  const [sortBy, setSortBy] = useState('dueDate'); // Default sort\n\n  useEffect(() => {\n    const fetchTasks = async () => {\n      try {\n        const response = await axios.get('/api/tasks');\n        setTasks(response.data);\n      } catch (error) {\n        console.error('Error fetching tasks:', error);\n      }\n    };\n    fetchTasks();\n  }, []);\n\n  const filteredTasks = tasks.filter(task =>\n    task.description.toLowerCase().includes(filterText.toLowerCase())\n  );\n\n  const sortedTasks = [...filteredTasks].sort((a, b) => {\n    if (sortBy === 'dueDate') return new Date(a.dueDate) - new Date(b.dueDate);\n    // Add other sorting criteria here\n    return 0; // Default to no sorting\n  });\n\n  return (\n    <div>\n      <input\n        type=\"text\"\n        placeholder=\"Filter tasks\"\n        value={filterText}\n        onChange={e => setFilterText(e.target.value)}\n      />\n      <select value={sortBy} onChange={e => setSortBy(e.target.value)}>\n        <option value=\"dueDate\">Due Date</option>\n        {/* Add other sorting options */}\n      </select>\n      <ul>\n        {sortedTasks.map(task => (\n          <li key={task.id}>{task.description}</li>\n        ))}\n      </ul>\n    </div>\n  );\n};\n\nexport default TaskList;\n```",
+  "test_cases": [
+    "1. Verify that the component renders correctly with an empty task list.",
+    "2. Verify that tasks are fetched and displayed correctly from the API.",
+    "3. Verify that filtering works correctly with various keywords.",
+    "4. Verify that sorting works correctly for different sorting criteria.",
+    "5. Verify that the component handles errors gracefully when fetching tasks fails."
+  ],
+  "file_management_actions": [
+    {
+      "action": "create_directory",
+      "parameters": {
+        "path": "src/components"
+      }
+    },
+    {
+      "action": "write_file",
+      "parameters": {
+        "file_path": "src/components/TaskList.js",
+        "content": "//Code from code_snippet above"
+      }
+    }
+  ]
+}
+```

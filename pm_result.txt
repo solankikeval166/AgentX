@@ -1,0 +1,94 @@
+{
+  "project": "Todo List Application",
+  "high_level_requirements": [
+    "Frontend in ReactJS",
+    "Backend in NodeJS",
+    "SQLite database for local storage"
+  ],
+  "subtasks": [
+    {
+      "id": 1,
+      "description": "Set up project structure (ReactJS & NodeJS)",
+      "priority": "High",
+      "instructions": "Initialize a React project using Create React App (`npx create-react-app client`). Create a NodeJS Express server directory (e.g., `server`). Install necessary packages: `express`, `sqlite3` in the server directory.  Ensure proper directory structure for separation of concerns.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 2,
+      "description": "Design SQLite database schema",
+      "priority": "High",
+      "instructions": "Design an SQLite schema with a table for tasks including columns: `id` (INTEGER PRIMARY KEY AUTOINCREMENT), `title` (TEXT NOT NULL), `description` (TEXT), `completed` (INTEGER, default 0), `createdAt` (TIMESTAMP DEFAULT CURRENT_TIMESTAMP), `updatedAt` (TIMESTAMP DEFAULT CURRENT_TIMESTAMP).",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 3,
+      "description": "Implement backend API (NodeJS) - Create Task endpoint",
+      "priority": "High",
+      "instructions": "Create a POST endpoint (`/tasks`) to handle task creation.  Validate input data. Insert the new task into the SQLite database. Return the created task as a JSON response.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 4,
+      "description": "Implement backend API (NodeJS) - Read Tasks endpoint",
+      "priority": "High",
+      "instructions": "Create a GET endpoint (`/tasks`) to retrieve all tasks from the database.  Allow for optional query parameters for filtering (e.g., completed status). Return tasks as a JSON array.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 5,
+      "description": "Implement backend API (NodeJS) - Update Task endpoint",
+      "priority": "Medium",
+      "instructions": "Create a PUT endpoint (`/tasks/:id`) to update an existing task. Validate input data and ensure the task ID exists. Update the task in the database and return the updated task.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 6,
+      "description": "Implement backend API (NodeJS) - Delete Task endpoint",
+      "priority": "Medium",
+      "instructions": "Create a DELETE endpoint (`/tasks/:id`) to delete a task. Ensure the task ID exists. Delete the task from the database and return a success response.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 7,
+      "description": "Build ReactJS frontend - Task List component",
+      "priority": "High",
+      "instructions": "Create a component to fetch and display the list of tasks from the backend API.  Implement functionality to mark tasks as complete.  Include basic styling.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 8,
+      "description": "Build ReactJS frontend - Add Task component",
+      "priority": "Medium",
+      "instructions": "Create a form component to allow users to add new tasks. Handle form submission and send data to the backend API.  Provide user feedback on success/failure.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 9,
+      "description": "Build ReactJS frontend - Edit & Delete Task functionality",
+      "priority": "Medium",
+      "instructions": "Implement functionality to edit and delete existing tasks.  Handle updates and deletions via API calls.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 10,
+      "description": "Integrate frontend and backend",
+      "priority": "High",
+      "instructions": "Connect the ReactJS frontend to the NodeJS backend API.  Ensure proper handling of API responses and error messages. Test thoroughly.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 11,
+      "description": "Implement filtering and sorting",
+      "priority": "Low",
+      "instructions": "Add functionality to filter tasks by completion status and sort by creation date or title.",
+      "assignee": "Senior Software Developer"
+    },
+    {
+      "id": 12,
+      "description": "Testing and Debugging",
+      "priority": "Low",
+      "instructions": "Write unit and integration tests for both frontend and backend.  Thoroughly test all API endpoints and UI interactions.",
+      "assignee": "Senior Software Developer"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "task_id": 102,
+  "task_description": "Implement backend API (NodeJS) - Update Task and Delete Task endpoints, and perform testing and debugging.",
+  "implementation_steps": [
+    "Setup project with Node.js, Express, and SQLite3.",
+    "Create database schema for tasks (id, title, description, completed).",
+    "Implement Update Task endpoint (/tasks/:id):",
+    "  - Validate request body (title, description, completed).",
+    "  - Check if task exists.",
+    "  - Update task in database.",
+    "  - Return updated task or appropriate error.",
+    "Implement Delete Task endpoint (/tasks/:id):",
+    "  - Check if task exists.",
+    "  - Delete task from database.",
+    "  - Return success or appropriate error.",
+    "Write unit tests using Jest for both endpoints (positive and negative cases).",
+    "Debug and fix any issues identified during testing.",
+    "Refactor code for readability and maintainability."
+  ],
+  "code_snippet": {
+    "updateTask": "async function updateTask(req, res) {\n  const { id } = req.params;\n  const { title, description, completed } = req.body;\n  // Validate request body\n  // Check if task exists\n  // Update task in database\n  // Return updated task or error\n}",
+    "deleteTask": "async function deleteTask(req, res) {\n  const { id } = req.params;\n  // Check if task exists\n  // Delete task from database\n  // Return success or error\n}"
+  },
+  "test_cases": [
+    {
+      "endpoint": "/tasks/:id (PUT)",
+      "description": "Update an existing task successfully.",
+      "test_cases":[
+        "Valid request body updates task.",
+        "Partial updates work correctly.",
+        "Invalid request body returns error.",
+        "Task not found returns error."
+      ]
+    },
+    {
+      "endpoint": "/tasks/:id (DELETE)",
+      "description": "Delete an existing task successfully.",
+      "test_cases":[
+        "Task is successfully deleted.",
+        "Attempting to delete non-existent task returns error."
+      ]
+    }
+  ],
+  "deadlines": {
+    "Implement backend API (NodeJS) - Update Task endpoint": "2024-03-15",
+    "Implement backend API (NodeJS) - Delete Task endpoint": "2024-03-18",
+    "Testing and Debugging": "2024-03-29"
+  },
+  "status": "In Progress" 
+}

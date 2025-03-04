@@ -1,0 +1,33 @@
+{
+  "task_id": 102,
+  "task_description": "Build ReactJS frontend: Add Task component and Edit/Delete Task functionality",
+  "implementation_steps": [
+    "**Task Component (Deadline: 2024-03-18):**",
+    "1. Create a new component 'Task.js'.",
+    "2. Design the UI for adding a new task (input field, submit button).",
+    "3. Implement state management for task input using useState hook.",
+    "4. Use Axios to send POST request to backend API endpoint for adding a new task.",
+    "5. Handle API response (success/error) and update UI accordingly.",
+    "6. Implement input validation to ensure task description is not empty.",
+    "7. Add loading indicator during API call.",
+    "**Edit/Delete Functionality (Deadline: 2024-03-25):**",
+    "8. Add edit and delete buttons to each task in the task list.",
+    "9. Implement state management to track which task is being edited.",
+    "10. Use Axios to send PUT request for updating a task and DELETE request for deleting a task.",
+    "11. Handle API responses for update and delete operations.",
+    "12. Implement confirmation dialog before deleting a task.",
+    "13. Update UI to reflect changes after successful API calls.",
+    "14. Implement error handling for API requests (e.g., network errors)."
+  ],
+  "code_snippet": "/* Example code snippet for adding a task (Task.js): */\n\nimport React, { useState } from 'react';\nimport axios from 'axios';\n\nconst AddTask = () => {\n  const [taskDescription, setTaskDescription] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [error, setError] = useState(null);\n\n  const handleSubmit = async (e) => {\n    e.preventDefault();\n    setIsLoading(true);\n    setError(null);\n    try {\n      await axios.post('/api/tasks', { description: taskDescription });\n      setTaskDescription('');\n    } catch (error) {\n      setError('Failed to add task');\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <input type=\"text\" value={taskDescription} onChange={e => setTaskDescription(e.target.value)} />\n      <button type=\"submit\" disabled={isLoading}>Add Task</button>\n      {error && <div>{error}</div>}\n    </form>\n  );\n};\n\nexport default AddTask;",
+  "test_cases": [
+    "Add a new task successfully.",
+    "Verify that adding an empty task shows an error message.",
+    "Edit an existing task successfully.",
+    "Delete an existing task successfully.",
+    "Handle network errors gracefully.",
+    "Test UI responsiveness for different screen sizes.",
+    "Ensure proper error handling and feedback to the user."
+  ],
+  "status": "In Progress"
+}
